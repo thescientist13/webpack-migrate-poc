@@ -1,4 +1,5 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
@@ -6,7 +7,8 @@ const webpack = require('webpack');
 module.exports = {
 
   entry: {
-    index: './src/index.js'
+    index: './src/index.js',
+    vendor: './src/vendor.js'
   },
 
   output: {
@@ -32,17 +34,17 @@ module.exports = {
     ]
   },
 
-  // TODO HtmlWebpackPlugin
-  // TODO webpack-dev-server
   plugins: [
     new UglifyJSPlugin(),
 
     new ExtractTextPlugin('styles-[contentHash].css'),
 
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'index',
-      filename: 'index-[hash].min.js'
-    })
+      name: 'common',
+      filename: 'common-[hash].min.js'
+    }),
+
+    new HtmlWebpackPlugin()
   ]
 
 };

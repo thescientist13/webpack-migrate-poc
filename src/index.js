@@ -1,10 +1,11 @@
+import jQuery from 'jquery';
 import './index.scss';
 
 function bootstrap() {
-  console.debug('ENTER bootstrap');
-  const greeting = 'Hello World';
+  const greetingText = 'Hello World!';
+  const greetingElement = jQuery('<h1>').html(greetingText).addClass('greeting');
 
-  // TODO append "<h1>Hello World<h1>" to the DOM
+  jQuery('body').append(greetingElement);
 }
 
 window.onload = bootstrap;

@@ -8,7 +8,7 @@ command and documenting the steps to resolve this [issue](https://github.com/web
 The objectives of this repo will be a "live" aid to support the goal of documenting the migration process.  The steps will include:
 
 1.  A basic JavaScript "Hello World" example (to verify the before / after)
-1.  Using a single [webpack 1](http://webpack.github.io/docs/) based configration reflecting common development and production configuration options
+1.  Using a single [webpack 1](http://webpack.github.io/docs/) based configration reflecting "common" usage patterns
 1.  Running the migration tast against that configuration
 1.  Documenting the results in [MIGRATE.md](https://github.com/webpack/webpack-cli/blob/master/MIGRATE.md) in a fork
 1.  Submitting a PR
@@ -126,6 +126,8 @@ where dependencies are backwards incompatible with webpack v1, like:
 
 - [Downgraded](https://github.com/babel/babel-loader#install) **babel-loader** to `^6.0.0`
 - Downgraded **extract-text-webpack-plugin** to `^1.0.0`
+
+### Alterations
 
 
 ### Testing Strategy

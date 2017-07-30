@@ -7,7 +7,9 @@
   "author": "Owen Buckley <owen.buckley@analogstudios.net>",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf ./dist && eslint *.js && webpack --config ./webpack.config.js"
+    "build": "rimraf ./dist && eslint *.js && webpack --config ./webpack.config.js",
+    "develop": "webpack-dev-server --config ./webpack.config.js --open",
+    "serve": "npm run build && cd ./dist && http-server"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
@@ -16,11 +18,17 @@
     "css-loader": "^0.28.4",
     "eslint": "^4.3.0",
     "extract-text-webpack-plugin": "^1.0.0",
+    "html-webpack-plugin": "^2.29.0",
+    "http-server": "^0.10.0",
     "node-sass": "^4.5.3",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "uglifyjs-webpack-plugin": "^0.4.6",
-    "webpack": "^1.0.0"
+    "webpack": "^1.0.0",
+    "webpack-dev-server": "^1.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
   }
 }
