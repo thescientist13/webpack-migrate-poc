@@ -18,18 +18,23 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel',
-        query: {
+        use: [{
+          loader: 'babel-loader'
+        }],
+        options: {
           presets: ['es2015']
         }
       },
       {
         test: /\.(scss|css)$/,
-        loader: ExtractTextPlugin.extract('style', 'css!sass')
+        use: ExtractTextPlugin.extract({
+          fallback: 'style',
+          use: 'css!sass'
+        })
       }
     ]
   },
