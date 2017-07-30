@@ -1,3 +1,6 @@
+// TODO SASS
+// import './index.scss';
+
 function bootstrap() {
   console.debug('ENTER bootstrap');
 
