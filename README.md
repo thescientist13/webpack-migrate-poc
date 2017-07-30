@@ -128,3 +128,6 @@ where dependencies are backwards incompatible with webpack v1, like:
 Given the above prompts and the generated config, w, we will make a simple app with styles and create a similar config.  In addition, we will add a 
 configuration for [**webpack-dev-server**](https://webpack.github.io/docs/webpack-dev-server.html), as that is a 
 common feature item found in a lot of projects.
+
+## Observations / Feedback
+1.  When running  `webpack-cli init`, the prompt for location could it make it clearer that an extension isn't required
