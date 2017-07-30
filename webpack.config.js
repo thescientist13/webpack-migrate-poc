@@ -1,4 +1,4 @@
-// TODO const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
@@ -15,14 +15,29 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
 
-  // TODO loaders
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+        query: {
+          presets: ['es2015']
+        }
+      },
+      {
+        test: /\.(scss|css)$/,
+        loader: ExtractTextPlugin.extract('style', 'css!sass')
+      }
+    ]
+  },
 
   // TODO HtmlWebpackPlugin
   // TODO webpack-dev-server
   plugins: [
     new UglifyJSPlugin(),
 
-    // new ExtractTextPlugin('styles.[contentHash].css'),
+    new ExtractTextPlugin('styles-[contentHash].css'),
 
     new webpack.optimize.CommonsChunkPlugin({
       name: 'index',
@@ -31,38 +46,3 @@ module.exports = {
   ]
 
 };
-
-//   module: {
-//     rules: [
-//       {
-//         test: /\.js$/,
-//         exclude: /node_modules/,
-//         loader: 'babel-loader',
-//
-//         options: {
-//           presets: ['es2015']
-//         }
-//       },
-//       {
-//         test: /\.(scss|css)$/,
-//
-//         use: ExtractTextPlugin.extract({
-//           use: [
-//             {
-//               loader: 'css-loader',
-//               options: {
-//                 sourceMap: true
-//               }
-//             },
-//             {
-//               loader: 'sass-loader',
-//               options: {
-//                 sourceMap: true
-//               }
-//             }
-//           ],
-//           fallback: 'style-loader'
-//         })
-//       }
-//     ]
-//   },
