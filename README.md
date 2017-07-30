@@ -135,3 +135,4 @@ common feature item found in a lot of projects.
 
 ## Observations / Feedback
 1.  When running  `webpack-cli init`, the prompt for location could make it clearer that an extension isn't required
+1.  Provide additional checklist items after running `webpack-cli migrate`?
