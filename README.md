@@ -123,7 +123,6 @@ This is the dependencies section of a _package.json_ file updated after running 
 
 It will also be used as a starting point for configuring this project's dependencies, but modified slightly in instances 
 where dependencies are backwards incompatible with webpack v1, like:
-- 
 
 ### Testing Strategy
 Given the above prompts and the generated config, w, we will make a simple app with styles and create a similar config.  In addition, we will add a 
